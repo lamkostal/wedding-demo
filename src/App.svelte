@@ -3,8 +3,7 @@
   import Card from "./Card.svelte";
   import { onMount } from "svelte";
 
-  let checked;
-  console.log("checked=" + checked);
+  
   let entries;
   let list = [];
   $: entries = list;
@@ -73,7 +72,6 @@
   }
   .grid {
     position: static;
-
     display: grid;
     grid-column-gap: 20px;
     grid-row-gap: 25px;
@@ -101,6 +99,7 @@
 	              on:add={pushValues}
 	              on:remove={removeValues}
 	              src={source.src}
+                checked={source.checked}
 	              name={'photo' + i} />
 	          {/each}
 	        </div>

@@ -2,10 +2,10 @@
 import {createEventDispatcher} from "svelte";
 const dispatch = new createEventDispatcher();
 
-
  
-export let src,name
-let checked = false;
+export let src,name,yes
+
+
 let checks
 $: checks=!checked
 
@@ -18,11 +18,12 @@ S: console.log("checks from comp:"+" "+ checks)
     else{
         dispatch('remove',this.value)
         console.log("removes")
+
         }
 
 }
 S: console.log("checked from comp:"+" "+ checked)
-// S: console.log("checks from comp:"+" "+ checks)
+S: console.log("checks from comp:"+" "+ checks)
 
 
 
@@ -30,10 +31,10 @@ S: console.log("checked from comp:"+" "+ checked)
 
 <div class="card">
   
-  <input class="checkbox" type="checkbox" name={name} bind:checked={checked} on:input={sendMessage} value="{src}">
+  <input class="checkbox" type="checkbox" name={name} bind:checked={yes} on:input={sendMessage} value="{src}">
   
  
-  <img src="{src}" alt="" class="photo" loading="lazy">
+  <img src="{src}" alt="" class="photo" loading="lazy" async>
   <span class="file-name">{src.substring(13)}</span>
     
 </div>
@@ -57,9 +58,9 @@ S: console.log("checked from comp:"+" "+ checked)
 }
 .checkbox{
     -webkit-appearance: none;
-    border: 1px solid #636363;
+    border: 1px solid #7a7a7a;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.1), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
-	padding: 1px;
+	padding: 12px;
 	border-radius: 3px;
 	display: inline-block;
     position: relative;
@@ -68,7 +69,7 @@ S: console.log("checked from comp:"+" "+ checked)
 }
 .checkbox:checked {
     background: green;
-    border: 1px solid #acacac;
+    border: 1px solid #ffffff;
     outline:none;
 
 }
@@ -77,10 +78,10 @@ S: console.log("checked from comp:"+" "+ checked)
 }
 .checkbox:checked:after {
 	content: '\2714';
-	font-size: 14px;
+	font-size: 16px;
 	position: absolute;
-	top: 0px;
-	left: 3px;
+	top: 1px;
+	left: 5px;
 	color: #ffffff;
 }
 </style>
