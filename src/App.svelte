@@ -31,11 +31,13 @@
   }
   h2.selected {
     margin: 0;
-    padding: 20px 5px;
+    padding: 10px 5px 060px;
     position: fixed;
     top: 0;
     background: #dadada;
     font-size: 1.4em;
+    width: 290px;
+    border-bottom: 1px solid #fff;
   }
   ul {
     list-style: none;
@@ -44,7 +46,7 @@
   }
   li {
     padding: 10px 10px;
-    border-top: 2px solid #fff;
+    border-bottom: 1px solid #fff;
     display: flex;
     align-items: center;
   }
@@ -102,7 +104,7 @@
 	              name={'photo' + i} />
 	          {/each}
 	        </div>
-	        <input type="submit" value="Submit!" class="submit" />
+	        <input type="submit" value="send selection!" class="submit" />
 	      </form>
 	
 	    </div>

@@ -41,7 +41,7 @@ S: console.log("checked from comp:"+" "+ checked)
 <style>
 .photo{
     width:100%;
-    padding: 0px;
+    padding: 5px;
     transition:0.2s ease;
     border-radius: 2px;
 }
