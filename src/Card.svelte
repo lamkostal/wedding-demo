@@ -33,7 +33,7 @@ S: console.log("checked from comp:"+" "+ checked)
   <input class="checkbox" type="checkbox" name={name} bind:checked={checked} on:input={sendMessage} value="{src}">
   
  
-  <img src="{src}" alt="" class="photo">
+  <img src="{src}" alt="" class="photo" loading="lazy">
   <span class="file-name">{src.substring(13)}</span>
     
 </div>
@@ -59,7 +59,7 @@ S: console.log("checked from comp:"+" "+ checked)
     -webkit-appearance: none;
     border: 1px solid #636363;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.1), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
-	padding: 9px;
+	padding: 1px;
 	border-radius: 3px;
 	display: inline-block;
     position: relative;
