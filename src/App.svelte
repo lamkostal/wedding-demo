@@ -76,7 +76,7 @@
     grid-column-gap: 20px;
     grid-row-gap: 25px;
 
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
   .submit{
     position: fixed;
@@ -99,7 +99,7 @@
 	              on:add={pushValues}
 	              on:remove={removeValues}
 	              src={source.src}
-                checked={source.checked}
+                
 	              name={'photo' + i} />
 	          {/each}
 	        </div>

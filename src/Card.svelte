@@ -3,9 +3,9 @@ import {createEventDispatcher} from "svelte";
 const dispatch = new createEventDispatcher();
 
  
-export let src,name,yes
+export let src,name
 
-
+let checked
 let checks
 $: checks=!checked
 
@@ -31,7 +31,7 @@ S: console.log("checks from comp:"+" "+ checks)
 
 <div class="card">
   
-  <input class="checkbox" type="checkbox" name={name} bind:checked={yes} on:input={sendMessage} value="{src}">
+  <input class="checkbox" type="checkbox" name={name} bind:checked={checked} on:input={sendMessage} value="{src}">
   
  
   <img src="{src}" alt="" class="photo" loading="lazy" async>
