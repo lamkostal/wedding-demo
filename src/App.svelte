@@ -25,6 +25,9 @@
 </script>
 
 <style>
+:root{
+  --aside-width:250px;
+}
   h1{
     padding:0 1em;
   }
@@ -34,8 +37,8 @@
     position: fixed;
     top: 0;
     background: #dadada;
-    font-size: 1.4em;
-    width: 290px;
+    font-size: 1.2em;
+    width: calc(var(--aside-width) - 10px);
     border-bottom: 1px solid #fff;
   }
   ul {
@@ -54,7 +57,7 @@
   }
   .aside {
     scroll-behavior: auto;
-    width: 300px;
+    width: var(--aside-width);
     height: 100vh;
     position: fixed;
     background: #dadada;
@@ -64,7 +67,7 @@
     overflow:auto;
   }
 .container{
-	margin:0 0 0 300px;
+	margin:0 0 0  var(--aside-width);
 }
   .grid-container {
     padding:20px;

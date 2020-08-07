@@ -1,11 +1,22 @@
 <script>
 import {createEventDispatcher} from "svelte";
 const dispatch = new createEventDispatcher();
+import lozad from 'lozad'
+import { onMount } from "svelte";
+
+
+onMount(async () => {
+		const observer = lozad('.lozad', {
+    rootMargin: '200px 0px', // syntax similar to that of CSS Margin
+    // ratio of element convergence
+}); // lazy loads elements with default selector as '.lozad'
+    observer.observe();
+	});
 
  
 export let src,name
 
-let checked
+let checked=false
 let checks
 $: checks=!checked
 
@@ -34,7 +45,7 @@ S: console.log("checks from comp:"+" "+ checks)
   <input class="checkbox" type="checkbox" name={name} bind:checked={checked} on:input={sendMessage} value="{src}">
   
  
-  <img src="{src}" alt="" class="photo" loading="lazy" async>
+  <img data-src="{src}" alt="" class="photo lozad" >
   <span class="file-name">{src.substring(13)}</span>
     
 </div>
